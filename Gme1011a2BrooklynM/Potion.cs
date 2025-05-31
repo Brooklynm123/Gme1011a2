@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace Gme1011a2BrooklynM
 {
@@ -26,16 +28,23 @@ namespace Gme1011a2BrooklynM
 
         }
 
-        public bool getdrink() {  return _drink; }
+        public bool getdrink() { return _drink; }
         public int gethealamount() { return _healamount; }
         public Vector2 getLocation() { return _location; }
 
+        public void update()
+        {
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+
+                _drink = true;
+
+            }
+          
 
 
 
-        
-            
-        
 
 
 
@@ -44,7 +53,11 @@ namespace Gme1011a2BrooklynM
 
 
 
+
+
+
+        }
     }
 }
-
+      
 
