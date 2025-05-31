@@ -8,7 +8,8 @@ namespace Gme1011a2BrooklynM
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
+        private SpriteFont _gamefont;
+        private SpriteBatch _Potion;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -26,7 +27,8 @@ namespace Gme1011a2BrooklynM
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            _gamefont = Content.Load<SpriteFont>("gamefont");
+            _Potion = Content.Load<SpriteBatch>("potion");
             // TODO: use this.Content to load your game content here
         }
 
@@ -43,8 +45,15 @@ namespace Gme1011a2BrooklynM
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(_Potion, new Vector2(50, 60), Color.White);
+            if (Getdrink() = true)
+            {
 
-            // TODO: Add your drawing code here
+                _spriteBatch.DrawString(_gamefont, "You healed " + Gethealamount(), new Vector2(50, 50), Color.White);
+
+            }
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
