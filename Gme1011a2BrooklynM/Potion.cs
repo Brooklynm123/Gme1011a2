@@ -15,22 +15,27 @@ namespace Gme1011a2BrooklynM
         private int _healamount;
         Random _rng = new Random();
         private bool _drink;
-    }
-    public Potion(Vector2 location,Texture2D potionTexture)
+
+
+        public Potion(Vector2 location, Texture2D potionTexture)
         {
-        _location = location;
-        _potionTexture = potionTexture;
-        _healamount = _rng.Next(5, 10);
-        _drink = false;
-
-
-
-
-
-
+            _location = location;
+            _potionTexture = potionTexture;
+            _healamount = _rng.Next(5, 10);
+            _drink = false;
 
         }
 
+        public bool getdrink() {  return _drink; }
+        public int gethealamount() { return _healamount; }
+        public Vector2 getLocation() { return _location; }
+
+
+
+
+        
+            
+        
 
 
 
@@ -38,6 +43,8 @@ namespace Gme1011a2BrooklynM
 
 
 
+
+    }
 }
 
 
